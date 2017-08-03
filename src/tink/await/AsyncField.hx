@@ -212,7 +212,7 @@ class AsyncField {
 					);
 				}
 				switch it.expr {
-					case EIn(e1, e2):
+					case EBinop(OpIn, e1, e2):
 						var ident = e1.getIdent().sure();
 						var blank = e2.pos.makeBlankType();
 						var iteratorBody = macro @:pos(e2.pos) ($e2: tink.await.LoopIterator<$blank>);
